@@ -1,14 +1,15 @@
+from pathlib import Path
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import classification_report, roc_auc_score
-
 import pandas as pd
 import torch
 import torch.nn as nn
 
+torch.manual_seed(42)
 
 class MLP(nn.Module):
     def __init__(self,input_size,hidden_size1,hidden_size2,output_size):
@@ -24,7 +25,7 @@ class MLP(nn.Module):
         x = self.fc3(x)
         return x
 
-data = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+data = pd.read_csv(Path(__file__).parent / "WA_Fn-UseC_-Telco-Customer-Churn.csv")
 data.info()
 print(data.head())
 
