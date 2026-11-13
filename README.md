@@ -14,10 +14,10 @@ using an MLP (PyTorch) on the IBM Telco Customer Churn dataset.
 
 | Metric | Value |
 | --- | --- |
-| AUC-ROC | 0.8377 |
+| AUC-ROC | 0.8395 |
 | Recall (churn) | 0.78 |
-| Precision (churn) | 0.51 |
-| Accuracy | 0.74 |
+| Precision (churn) | 0.52 |
+| Accuracy | 0.75 |
 
 The model favors recall: it catches 78% of customers who cancel, at the cost of
 more false alarms (precision 0.51).
